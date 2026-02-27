@@ -82,8 +82,7 @@ TEST_CASE("Example: Print Prompt Ledger", "[ex-3]") {
 
 TEST_CASE("RegisterAccount: duplicate (card,pin) should throw invalid_argument", "[reg-dup]") {
   // What this catches:
-  // If the implementation accidentally overwrites an existing account
-  // instead of rejecting duplicates, this test will fail.
+  // If the implementation accidentally overwrites an existing account instead of rejecting duplicates, this test will fail.
   Atm atm;
   atm.RegisterAccount(11111111, 1111, "Alice", 10.0);
 
@@ -111,7 +110,7 @@ TEST_CASE("CheckBalance: invalid credentials should throw invalid_argument", "[b
 }
 
 TEST_CASE("WithdrawCash: negative amount should throw invalid_argument", "[withdraw-neg]") {
-  // What this catches:
+  // what this catches:
   // Missing validation: a negative withdraw could ADD money (security issue).
   Atm atm;
   atm.RegisterAccount(33333333, 3333, "NegWithdraw", 100.0);
